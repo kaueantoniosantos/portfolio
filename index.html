@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+                <a href="#sobre" class="menu-link">Sobre</a>
+                <a href="#projetos" class="menu-link">Projetos</a>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="#inicio" class="cabecalho">
+        <img src="./img/foto-perfil-sem-fundo.png" alt="foto de perfil" class="foto-perfil">
+        <h1>Kauê Antonio</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor de Sistemas</p>
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Estudante de Desenvolvimento de Sistemas no SENAI, com uma paixão crescente por
+                transformar desafios complexos em soluções de software elegantes e eficientes. Estou construindo uma
+                base sólida em C#, JavaScript e tecnologias web, com o objetivo de me aprofundar na área de Sistemas de
+                Informação. Busco uma oportunidade de estágio ou vaga júnior para aplicar meus conhecimentos em um
+                ambiente profissional e contribuir para o desenvolvimento de soluções tecnológicas.</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa" onclick="entrarNoGit('https://github.com/kaueantoniosantos/GaleriaOnline')">
+            <div class="projetos-card">
+                <img src="./img/projeto1.png" alt="Foto da página da Galeria Online" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Galeria Online</h3>
+                    <p class="paragrafo-projetos">Uma API RESTful para gerenciamento de imagens, construída com ASP.NET
+                        Core e Entity Framework. Ela permite o upload, listagem, atualização e exclusão de imagens, com
+                        todas as funcionalidades acessíveis via Swagger. Este projeto é a base para uma futura aplicação
+                        web completa com React.</p>
+                </div>
+            </div>
+            <div class="projetos-card" onclick="entrarNoGit('https://github.com/kaueantoniosantos/FindCEP')">
+                <img src="./img/projeto2.png" alt="Foto da página do FindCep" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">FindCep</h3>
+                    <p class="paragrafo-projetos">Desenvolvi uma aplicação que utiliza uma API para buscar dados de
+                        endereços a partir de um CEP. É simples e prático: basta digitar o número e pronto, você tem
+                        acesso a informações como rua, bairro e cidade. Um jeito rápido de encontrar o que você precisa!
+                    </p>
+                </div>
+            </div>
+            <div class="projetos-card" onclick="entrarNoGit('https://github.com/kaueantoniosantos/Calculadora')">
+                <img src="./img/projeto3.png" alt="Foto da página da Calculadora" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Calculadora</h3>
+                    <p class="paragrafo-projetos">Desenvolvi uma calculadora simples e intuitiva usando HTML, CSS e
+                        JavaScript puro. Este projeto oferece as operações matemáticas básicas (adição, subtração,
+                        multiplicação e divisão) com uma interface limpa e fácil de usar. Perfeita para cálculos rápidos
+                        no navegador!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form id="formulario" class="formulario-contato" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" id="mensagem" rows="6"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+
+        function entrarNoGit(url) {
+            window.open(url, '_blank');
+        }
+
+        function enviarWhats(event) {
+
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511990220966'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
