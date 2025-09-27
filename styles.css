@@ -86,11 +86,13 @@ h1 {
     color: var(--primaria);
     font-weight: bold;
     margin: 20px;
+    text-align: center;
 }
 
 .cabecalho-sub-titulo {
     font-size: 1.5rem;
     color: var(--claro);
+    text-align: center;
 }
 
 .sobre {
@@ -251,3 +253,4 @@ h1 {
     }
 
 }
+
